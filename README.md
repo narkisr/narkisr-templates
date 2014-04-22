@@ -5,6 +5,8 @@ A Basic Leiningen template that includes:
 * [timbre](https://github.com/ptaoussanis/timbre) for logging.
 * [midje](https://github.com/marick/Midje) and [lein-midje](https://github.com/marick/lein-midje) for testing.
 * Lein [set-version](https://github.com/pallet/lein-set-version) and [tag](https://github.com/Raynes/lein-tag) plugins for release managment.
+* Apache V2 license file and README.md to match.
+* travis.ci file.
 
 
 ## Usage

@@ -18,5 +18,5 @@
        ["project.clj" (render "project.clj" combined)]
        ["LICENSE-2.0.txt" (render "LICENSE-2.0.txt" combined)]
        ["README.md" (render "README.md" combined)]
-       [".travis.ci" (binary "travis.ci")]
+       [".travis.ci" (render "travis.ci" combined)]
        ["src/{{sanitized}}/core.clj" (render "core.clj" combined)])))

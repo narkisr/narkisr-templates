@@ -1,3 +1,2 @@
-
 (ns {{name}}.core)
 

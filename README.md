@@ -10,7 +10,7 @@ A Basic Leiningen template that includes:
 ## Usage
 
 ```bash
-$ lein new narkisr base
+$ lein new narkisr user narkisr first Ronen last Narkis
 ```
 
 ## License

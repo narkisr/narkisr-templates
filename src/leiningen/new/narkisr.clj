@@ -9,10 +9,14 @@
   * timbre for logging.
   * midje and lein-midje for testing.
   * Lein set-version and lein-tag plugins for release managment. "
-  [name]
-  (let [data {:name name
-              :sanitized (name-to-path name)}]
-    (main/info "Generating fresh 'lein new' base project.")
-    (->files data
-       ["project.clj" (render "project.clj" data)]
-       ["src/{{sanitized}}/core.clj" (render "core.clj" data)])))
+  [name & opts]
+  (let [data {:name name :sanitized (name-to-path name) :user "USER"}
+        opts-m (into {} (map (fn [[k v]] [(keyword k) v]) (partition 2 opts)))
+        combined (merge data opts-m)]
+    (main/info "Generating" combined)
+    (->files combined
+       ["project.clj" (render "project.clj" combined)]
+       ["LICENSE-2.0.txt" (render "LICENSE-2.0.txt" combined)]
+       ["README.md" (render "README.md" combined)]
+       [".travis.ci" (binary "travis.ci")]
+       ["src/{{sanitized}}/core.clj" (render "core.clj" combined)])))
